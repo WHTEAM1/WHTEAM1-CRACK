@@ -1,0 +1,107 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: transparent; /* Arka plan şeffaf (oyun veya uygulama üstünde çalışırken arkası görüksün diye) */
+    overflow: hidden;
+}
+
+/* Yüzen Video Buton (Yuvarlak) */
+.floating-button {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%; /* Kusursuz daire yapar */
+    overflow: hidden;
+    border: 2px solid #00ffcc; /* Etrafına neon yeşil/mavi çerçeve */
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Butonun içindeki video ayarı */
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Videonun daire içine tam oturmasını sağlar */
+}
+
+/* Açılır Perde Menü (Başlangıçta gizli) */
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Ekranın sol dışında gizlenir */
+    width: 260px;
+    height: 100vh;
+    background: rgba(18, 18, 18, 0.95);
+    border-right: 2px solid #00ffcc;
+    transition: left 0.3s ease; /* Açılıp kapanma efekti */
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Menü aktif olduğunda ekrana kayarak gelir */
+.menu-container.active {
+    left: 0;
+}
+
+/* Menü Üst Kısmı */
+.menu-header {
+    padding: 15px;
+    background: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #00ffcc;
+    border-bottom: 1px solid #333;
+}
+
+.menu-header h2 {
+    font-size: 16px;
+}
+
+.menu-header button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Menü Seçenekleri */
+.menu-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.menu-item:hover {
+    background: #00ffcc;
+    color: black;
+}
