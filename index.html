@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHTEAM Mod Menü</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Yüzen Video Butonu (Yuvarlak) -->
+    <div class="floating-button" id="floatingBtn">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="WHTEAM-MENU.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Açılır Perde Menü -->
+    <div class="menu-container" id="menuContainer">
+        <div class="menu-header">
+            <h2>WHTEAM PANEL</h2>
+            <button id="closeBtn">X</button>
+        </div>
+        <div class="menu-body">
+            <button class="menu-item">Özellik 1: AÇIK</button>
+            <button class="menu-item">Özellik 2: KAPALI</button>
+            <button class="menu-item">Hız Hilesi</button>
+        </div>
+    </div>
+
+    <script>
+        // Butona tıklandığında menünün açılıp kapanmasını sağlayan basit JavaScript
+        const floatingBtn = document.getElementById('floatingBtn');
+        const menuContainer = document.getElementById('menuContainer');
+        const closeBtn = document.getElementById('closeBtn');
+
+        floatingBtn.addEventListener('click', () => {
+            menuContainer.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            menuContainer.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
